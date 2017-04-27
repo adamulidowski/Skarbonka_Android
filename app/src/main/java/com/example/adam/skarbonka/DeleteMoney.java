@@ -14,7 +14,6 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import baza.AndroidDbHelper;
 
 public class DeleteMoney extends AppCompatActivity {
 

@@ -2,6 +2,7 @@ package com.example.adam.skarbonka;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class PanelGlowny extends AppCompatActivity {
     private Button addMoney;
     private Button deleteMoney;
     private Button history;
+    private Button ustawienia;
     private TextView stanKonta;
 
 
@@ -29,6 +31,8 @@ public class PanelGlowny extends AppCompatActivity {
         addMoney = (Button)findViewById(R.id.addMoney);
         deleteMoney = (Button)findViewById(R.id.deleteMoney);
         history = (Button)findViewById(R.id.history);
+        ustawienia = (Button)findViewById(R.id.ustawienia);
+
         stanKonta = (TextView) findViewById(R.id.stanKonta);
 
 
@@ -56,17 +60,23 @@ public class PanelGlowny extends AppCompatActivity {
             }
         });
 
-        SQLiteDatabase baza = openOrCreateDatabase("skarbonka", MODE_PRIVATE, null);
-       // baza.execSQL("DROP TABLE Wydatkii;");
-        baza.execSQL("CREATE TABLE IF NOT EXISTS Wydatkii (Kwota VARCHAR, Opis VARCHAR, AktualnyStan VARCHAR, Data VARCHAR, czyPlus VARCHAR);");
-        //Date data = new Date();
-        //baza.execSQL("INSERT INTO Wydatkii VALUES('0', 'Stan Początkowy', '0', '2017-04-26 10:00:00','+');");
-        Cursor cursor = baza.rawQuery("SELECT * FROM Wydatkii", null);
-        cursor.moveToLast();
-        String stan = cursor.getString(cursor.getColumnIndex("AktualnyStan"));
-        String stanZl = stan+ " zł";
+        ustawienia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(PanelGlowny.this, Settings.class);
+                PanelGlowny.this.startActivity(myIntent);
+            }
+        });
 
-        stanKonta.setText(stanZl);
+        SQLiteDatabase baza = openOrCreateDatabase("skarbonka", MODE_PRIVATE, null);
+        baza.execSQL("CREATE TABLE IF NOT EXISTS Wydatkii (Kwota VARCHAR, Opis VARCHAR, AktualnyStan VARCHAR, Data VARCHAR, czyPlus VARCHAR);");
+       // baza.execSQL("INSERT INTO Wydatkii VALUES('0', 'Stan Początkowy', '0', '2017-04-26 10:00:00','+');");
+            Cursor cursor = baza.rawQuery("SELECT * FROM Wydatkii", null);
+            cursor.moveToLast();
+            String stan = cursor.getString(cursor.getColumnIndex("AktualnyStan"));
+            String stanZl = stan + " zł";
+
+            stanKonta.setText(stanZl);
 
         baza.close();
     }
