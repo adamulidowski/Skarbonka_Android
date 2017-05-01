@@ -6,9 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class History extends AppCompatActivity {
 
@@ -16,8 +19,10 @@ public class History extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-        String [] wartosci = new String [] {"aaa", "bbb", "ccc"};
+        setTitle("Historia");
+
         ListView listView = (ListView) findViewById(R.id.lista);
+
         ArrayAdapter <AllHistory> adapter = new ArrayAdapter<AllHistory>(this, android.R.layout.simple_list_item_1, getAllHistory());
         listView.setAdapter(adapter);
     }

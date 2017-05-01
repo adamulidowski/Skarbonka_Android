@@ -56,9 +56,9 @@ public class AllHistory {
     @Override
     public String toString() {
         if(czyPlus==true){
-            return   Opis  + "\nData: "+Data+"\n\nWprowadzono: " + Kwota + " zł \nStan skarbonki: "+ AktualnyStan  + " zł";
+            return   Opis  +"\nWrzucono: " + Kwota + " zł \n"+Data.substring(0, getData().length()-3)+", Stan skarbonki: "+ AktualnyStan  + " zł";
         }else {
-            return   Opis  + "\nData: "+Data+"\n\nWydano: " + Kwota + " zł \nStan skarbonki: "+ AktualnyStan  + " zł";
+            return   Opis  +"\nWydano: " + Kwota + " zł \n"+Data.substring(0, getData().length()-3)+", Stan skarbonki: "+ AktualnyStan  + " zł";
         }
     }
 }

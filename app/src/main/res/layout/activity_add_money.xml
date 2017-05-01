@@ -11,10 +11,11 @@
 
     <EditText
         android:id="@+id/editText1"
-        android:layout_width="370dp"
+        android:layout_width="345dp"
         android:layout_height="47dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:inputType="number"
         android:text=""
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
@@ -39,12 +40,13 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:textColor="@android:color/black"
-        android:layout_width="370dp"
         android:backgroundTint="@android:color/black"
         android:textCursorDrawable="@null"
+        android:textColor="@android:color/black"
+        android:layout_width="345dp"
         android:layout_height="47dp"
         android:ems="10"
+        android:textAlignment="center"
         android:inputType="textPersonName"
         android:text=""
         tools:layout_constraintTop_creator="1"
@@ -82,7 +84,6 @@
         android:textColor="@android:color/black"
         android:layout_width="0dp"
         android:layout_height="45dp"
-
         android:text="Wprowadź kwotę w całych złotówkach oraz opis, a następnie naciśnij przycisk"
         android:textAlignment="center"
         android:textSize="18sp"

@@ -29,6 +29,7 @@ public class DeleteMoney extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_money);
+        setTitle("Wydatek");
 
         pieniadze= (EditText) findViewById(R.id.editText1);
         opisik= (EditText) findViewById(R.id.editText2);

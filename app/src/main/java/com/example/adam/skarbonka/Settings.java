@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Settings extends AppCompatActivity {
 
     Button reset;
@@ -18,8 +21,9 @@ public class Settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        setTitle("Ustawienia");
 
-       reset=(Button) findViewById(R.id.reset);
+        reset=(Button) findViewById(R.id.reset);
 
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,7 +36,10 @@ public class Settings extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         SQLiteDatabase baza = openOrCreateDatabase("skarbonka", MODE_PRIVATE, null);
                         baza.execSQL("DELETE FROM Wydatkii;");
-                        baza.execSQL("INSERT INTO Wydatkii VALUES('0', 'Stan Początkowy', '0', '2017-04-26 10:00:00','+');");
+                        SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                        Date date = new Date();
+                        String data = dt.format(date);
+                        baza.execSQL("INSERT INTO Wydatkii VALUES('0', 'Stan Początkowy', '0', '"+data+"','+');");
                         baza.close();
                         info = Toast.makeText(Settings.this, "Skarbonka wyczyszczona!", Toast.LENGTH_SHORT);
                         info.show();

@@ -29,6 +29,7 @@ public class AddMoney extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_money);
+        setTitle("Wpłata");
 
         pieniadze= (EditText) findViewById(R.id.editText1);
         opisik= (EditText) findViewById(R.id.editText2);
