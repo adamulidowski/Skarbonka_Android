@@ -19,6 +19,7 @@ public class PanelGlowny extends AppCompatActivity {
     private Button deleteMoney;
     private Button history;
     private Button ustawienia;
+    private Button chart;
     private TextView stanKonta;
 
 
@@ -34,7 +35,7 @@ public class PanelGlowny extends AppCompatActivity {
         deleteMoney = (Button)findViewById(R.id.deleteMoney);
         history = (Button)findViewById(R.id.history);
         ustawienia = (Button)findViewById(R.id.ustawienia);
-
+        chart = (Button)findViewById(R.id.chart);
         stanKonta = (TextView) findViewById(R.id.stanKonta);
 
 
@@ -58,6 +59,14 @@ public class PanelGlowny extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(PanelGlowny.this, History.class);
+                PanelGlowny.this.startActivity(myIntent);
+            }
+        });
+
+        chart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(PanelGlowny.this, Chart.class);
                 PanelGlowny.this.startActivity(myIntent);
             }
         });

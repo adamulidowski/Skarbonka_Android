@@ -10,6 +10,30 @@
     tools:layout_editor_absoluteX="0dp">
 
     <Button
+        android:id="@+id/chart"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:alpha="0.5"
+        android:textColor="#000000"
+        android:text="Wykres"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintHorizontal_bias="0.0"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/ustawienia" />
+
+    <Button
         android:id="@+id/addMoney"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
@@ -57,6 +81,9 @@
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
+
+
+
 
     <Button
         android:id="@+id/history"

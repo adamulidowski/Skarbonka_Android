@@ -19,7 +19,8 @@
         <activity android:name=".AddMoney" />
         <activity android:name=".DeleteMoney" />
         <activity android:name=".History" />
-        <activity android:name=".Settings"></activity>
+        <activity android:name=".Settings" />
+        <activity android:name=".Chart"></activity>
     </application>
 
 </manifest>
